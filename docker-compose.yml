@@ -1,0 +1,22 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mycrew-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src/my_crew:/app/my_crew
+    environment:
+      - PYTHONUNBUFFERED=1
+    env_file: .env
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: mycrew-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend

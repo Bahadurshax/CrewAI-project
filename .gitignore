@@ -1,0 +1,14 @@
+.env
+__pycache__/
+.DS_Store
+.venv/
+
+/frontend/node_modules/
+/frontend/.vite/
+/frontend/dist/
+
+src/__pycache__
+
+.vscode/
+.idea/
+.DS_Store
